@@ -1,21 +1,18 @@
 #include <stdio.h>
 int n;
-long long tong = 0;
-int dem = 0;
+long long tong;
+double tbc;
 int main() {
     printf("Nhap n: ");
     scanf("%d", &n);
-    for (int i = 1; i <= n; i++) {
-        if (i % 2 == 0) {
-            tong += i;
-            dem++;
-        }
-    }
-    printf("Tong cac so chan tu 1 den %d la: %lld\n", n, tong);
-    if (dem > 0)
-        printf("Trung binh cong cac so chan la: %.2f\n", (float)tong / dem);
-    else
-        printf("Khong co so chan nao trong khoang nay.\n");
 
+    int k = n / 2;          // số lượng số chẵn
+    tong = (long long)k * (k + 1);
+    if (k > 0)
+        tbc = (double)tong / k;
+    else
+        tbc = 0;
+    printf("Tong cac so chan tu 1 den %d la: %lld\n", n, tong);
+    printf("Trung binh cong cac so chan la: %.2f\n", tbc);
     return 0;
 }
